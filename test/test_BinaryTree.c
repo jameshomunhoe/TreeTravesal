@@ -136,3 +136,60 @@ void test_binary_tree_with_4_node_parent_with_left_child_with_2_child(void){
 	
 	binaryTreeTravesalInOrder(&root);
 }
+
+
+/**
+*		10
+*		/ \
+*	   5   -
+*	  / \
+*	 1   -
+*/
+void test_binaryTreePrintInOrder_1_5_10(void){
+	
+	Node Child1 = {NULL, NULL, 1};
+	Node Child5 = {&Child1, NULL, 5};
+	Node root = {&Child5, NULL, 10};
+	
+	printf("test_binaryTreePrintInOrder_1_5_10\n");
+	binaryTreePrintInOrder(&root);
+
+}
+
+/**
+*		10
+*	   /   \
+*	  5    15
+*/
+void test_binaryTreePrintInOrder_5_10_15(void){
+	
+	Node Child15 = {NULL, NULL, 15};
+	Node Child5 = {NULL, NULL, 5};
+	Node root = {&Child5, &Child15, 10};
+	
+	printf("test_binaryTreePrintInOrder_5_10_15\n");
+	binaryTreePrintInOrder(&root);
+
+}
+
+/**
+*		10
+*	  /  	 \
+*	 5  	 15
+*	/  \ 	 / \
+*  1	6  	12  17
+*/
+void test_binaryTreePrintInOrder_1_5_6_10_12_15_17(void){
+	
+	Node Child17 = {NULL, NULL, 17};
+	Node Child12 = {NULL, NULL, 12};
+	Node Child15 = {&Child12, &Child17, 15};
+	
+	Node Child1 = {NULL, NULL, 1};
+	Node Child6 = {NULL, NULL, 6};
+	Node Child5 = {&Child1, &Child6, 5};
+	Node root = {&Child5, &Child15, 10};
+	printf("test_binaryTreePrintInOrder_1_5_6_10_12_15_17\n");
+	binaryTreePrintInOrder(&root);
+
+}
